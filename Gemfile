@@ -15,11 +15,16 @@ gem 'turbolinks'
 gem 'jbuilder'
 
 gem 'line-bot-api'
+gem 'haml'
+gem 'haml-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara'
   gem 'selenium-webdriver'
+
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do
