@@ -72,6 +72,7 @@ GEM
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
+    line-bot-api (1.2.2)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -179,6 +180,7 @@ DEPENDENCIES
   capybara
   coffee-rails
   jbuilder
+  line-bot-api
   listen
   puma
   rails (~> 5.1.4)
