@@ -12,7 +12,8 @@ development:
 
 test:
   <<: *default
-  database: 'slackbot'
+  adapter: mysql2
+  database: 'slackbot-test'
   host: 127.0.0.1
   username: root
   password:
