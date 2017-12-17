@@ -1,24 +1,11 @@
-# README
+# LINE MESSAGE API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- [x] Heroku に Rails のアプリを用意する
+- [ ] おうむ返しのbotを用意する
+  - [ ] spec を書く
+- [ ] 選択肢の提供を用意する
+- [ ] 選択肢から検索実行して返す
 
-Things you may want to cover:
+# LINE
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- https://developers.line.me/ja/services/messaging-api/
