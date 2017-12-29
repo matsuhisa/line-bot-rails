@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :line do
-      get "callback"
+      post "callback"
     end
   end
 end
