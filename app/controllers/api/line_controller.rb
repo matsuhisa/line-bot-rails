@@ -11,22 +11,21 @@ class Api::LineController < ApplicationController
     end
 
     events = client.parse_events_from(body)
-    events.each do |event|
+    events.each { |event|
       case event
-      when Line::Bot::Event::Postback
-        client.reply_message(event['replyToken'], event['postback']['data'])
       when Line::Bot::Event::Message
         case event.type
         when Line::Bot::Event::MessageType::Text
-          client.reply_message(event['replyToken'], message)
-        when Line::Bot::Event::MessageType::Image, Line::Bot::Event::MessageType::Video
-          response = client.get_message_content(event.message['id'])
-          tf = Tempfile.open("content")
-          tf.write(response.body)
+          message = {
+            type: 'text',
+            text: event.message['text']
+          }
+          response = client.reply_message(event['replyToken'], message)
+          p response
         end
       end
-    end
-    render :nothing => true, status: :ok
+    }
+    head :ok
   end
 
   private
