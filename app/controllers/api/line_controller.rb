@@ -15,11 +15,12 @@ class Api::LineController < ApplicationController
     events.each { |event|
       case event
       when Line::Bot::Event::Postback
-        message = {
-          type: 'text',
-          text: event['postback']['data']
-        }
-        response = client.reply_message(event['replyToken'], message)
+        # message = {
+        #   type: 'text',
+        #   text: event['postback']['data']
+        # }
+        question = Question.new(event['postback']['data'])
+        response = client.reply_message(event['replyToken'], question.message)
         p response
       when Line::Bot::Event::Message
         case event.type
@@ -38,7 +39,7 @@ class Api::LineController < ApplicationController
                         {
                           type: "postback",
                           label: "Buy",
-                          data: "action=buy&itemid=123"
+                          data: "next_action=numbers&type=1"
                         },
                         {
                           type: "uri",
@@ -60,7 +61,7 @@ class Api::LineController < ApplicationController
                         {
                           type: "postback",
                           label: "Buy",
-                          data: "action=buy&itemid=123"
+                          data: "next_action=numbers&type=2"
                         },
                         {
                           type: "uri",
