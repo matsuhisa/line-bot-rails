@@ -28,9 +28,9 @@ class Question
   end
 
   def numbers
-    columns = [
+    [
       {
-        "thumbnailImageUrl": "http://2.bp.blogspot.com/-UtyHZTr8itg/VYJru5mxDMI/AAAAAAAAukE/6iB071EEzdA/s800/party_formal_rissyoku.png",
+        "thumbnailImageUrl": "https://farm5.staticflickr.com/4244/35370997765_5f65dd60da_k_d.jpg",
         "title": "80人ぐらいで",
         "text": "家族や職場の人も。賑やかに40〜80人",
         "actions": [
@@ -38,11 +38,16 @@ class Question
             type: "postback",
             label: "80人ぐらい",
             data: "next_action=cost&numbers=80"
+          },
+          {
+            type: "uri",
+            label: "詳細",
+            uri: "https://www.flickr.com/photos/matsuhisa/35241101511"
           }
         ]
       },
       {
-        "thumbnailImageUrl": "http://1.bp.blogspot.com/-E8IWSr1cQWA/U2ssTECWv4I/AAAAAAAAgDU/4v_RdErMLr0/s800/wedding_oya.png",
+        "thumbnailImageUrl": "https://farm5.staticflickr.com/4288/35241101511_d919ed5d75_k_d.jpg",
         "title": "家族と親類で",
         "text": "家族で和やかに、10〜20人プラン",
         "actions": [
@@ -50,6 +55,11 @@ class Question
             type: "postback",
             label: "20人ぐらい",
             data: "next_action=cost&numbers=20"
+          },
+          {
+            type: "uri",
+            label: "詳細",
+            uri: "https://www.flickr.com/photos/matsuhisa/35241101511"
           }
         ]
       }

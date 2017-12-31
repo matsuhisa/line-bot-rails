@@ -15,12 +15,9 @@ class Api::LineController < ApplicationController
     events.each { |event|
       case event
       when Line::Bot::Event::Postback
-        # message = {
-        #   type: 'text',
-        #   text: event['postback']['data']
-        # }
         question = Question.new(event['postback']['data'])
-        response = client.reply_message(event['replyToken'], question.message)
+        message = question.message
+        response = client.reply_message(event['replyToken'], message)
         p response
       when Line::Bot::Event::Message
         case event.type
@@ -78,6 +75,11 @@ class Api::LineController < ApplicationController
                 ]
             }
           }
+
+
+puts "----------"
+puts message
+puts "----------"
 
           response = client.reply_message(event['replyToken'], message)
           p response
